@@ -1,25 +1,7 @@
-
 <?php
-
-$host = 'localhost';
-$db = 'classicmodels';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host; dbname=$db; charset=$charset";
-
-try { $pdo = new PDO($dsn, $user,$pass);
-} catch (\PDOException $e) {
- throw new \PDOException($e->getMessage(),(int)$e->getCode());
-}
-
-
-
+require_once('db.php');
+require_once('select.php');
 ?>
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,32 +13,14 @@ try { $pdo = new PDO($dsn, $user,$pass);
     <script src="main.js"></script>
 </head>
 <body>
-    
-    <!--Funktioner, se alla ordrar, söka efter ordrar, lägga till och ta bort order--> 
-
-<form ></form>
-
 <h1>Test</h1>
 
 <?php
-
-
-$statement = $pdo->query('SELECT * FROM orders');
-while ($row = $statement->fetch());
-
-{
-
-    print_r($row);   
-    echo "<hr>";
-
+ if($stmt->rowCount() > 0){
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        print_r($row);
+    }
 }
-
-
 ?>
-
-
-
-
-
 </body>
 </html>
