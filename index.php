@@ -15,6 +15,7 @@ require_once('select.php');
 <body>
 <h1>Test</h1>
 
+<pre>
 <?php
  if($stmt->rowCount() > 0){
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -22,5 +23,6 @@ require_once('select.php');
     }
 }
 ?>
+</pre>
 </body>
 </html>
