@@ -1,6 +1,6 @@
 <?php
 
-$sql = "SELECT * FROM orders";    
+$sql = "SELECT 'orderDate', 'requiredDate', 'shippingDate', 'status', 'comments' FROM orders";    
 
 // Förbered förfrågan till databasen
 $stmt = $conn->prepare($sql);
